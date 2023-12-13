@@ -53,7 +53,8 @@ class FindWords:
     def parse_word_list(self):
         self.end_results = dict(OrderedDict(sorted(dict(self.end_results).items())))
         for key, value in self.end_results.items():
-            value_join = "\t".join(value)
+            unique_list = list(set(value))
+            value_join = "\t".join(unique_list)
             print(f"{key}: {value_join}")
 
     def word_alphabet(self, word):
